@@ -1,0 +1,3 @@
+create().node_schema("Station").edge_schema("TubeExists")
+create().node_property(@Station, "StationName")
+

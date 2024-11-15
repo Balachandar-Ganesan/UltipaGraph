@@ -1,0 +1,2 @@
+ab().src({_id == "229"}).dest({_id == "320"}).depth(2) as p 
+return p
