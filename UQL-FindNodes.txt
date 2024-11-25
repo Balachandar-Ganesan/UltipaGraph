@@ -1,0 +1,48 @@
+find().nodes() as n
+return n{*}
+
+
+find().nodes({@Station}) as n
+return n{*}
+
+find().nodes({@default}) as n
+return n{*}
+
+find().nodes({@Station || @default}) as n
+return n{*}
+
+find().nodes({@Station || @Default}) as n
+return n{*}
+
+
+find().nodes({@Station}) as n
+return n.StationName
+
+find().nodes({@Station.StationName=="Oval"}) as n
+return n._id
+
+
+
+find().nodes({@Station.StationName Contains "Ov"}) as n
+return n.StationName
+
+find().nodes({_id in ["228", "229"]}) as n
+return n{*}
+
+
+find().nodes({@Station}) as Station limit 3
+return Station.StationName
+
+
+uncollect ["228", "000", "229"] as ID
+optional find().nodes({_id == ID}) as n
+return n.StationName
+
+uncollect ["228", "000", "229"] as ID
+find().nodes({_id == ID}) as n
+return n.StationName
+
+
+uncollect ["228", "000", "229"] as ID
+find().nodes({_id == ID}) as n
+return n.StationName,n._id
