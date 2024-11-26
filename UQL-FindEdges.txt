@@ -1,0 +1,27 @@
+find().edges() as e
+return e{*}
+
+find().edges({@TubeExists}) as e
+return e{*}
+
+
+find().edges({@TubeExists._to == "266"}) as e
+return e._from
+
+find().edges({_to < "11"}) as e
+return e{*}
+
+
+find().edges({_from in ["266", "11"]}) as e
+return e{*}
+
+find().edges() as TubeExists
+return TubeExists._from,TubeExists._to
+
+
+find().edges({@TubeExists}) as e limit 3
+return e{*}
+
+uncollect ["1","2"] as num
+optional find().edges({_from == num}) as e
+return e._to
