@@ -1,0 +1,18 @@
+ab().src({_id in ["229"]}).dest({_id in ["59"]}).depth(:3) as p 
+return p
+
+ab().src({_id in ["229"]}).dest({_id in ["59"]}).depth(:2) as p 
+return p
+
+
+ab().src({_id in ["229"]}).dest({_id in ["59"]}).depth(:4) as p 
+return p
+
+ab().src({_id in ["229"]}).dest({_id in ["59"]}).depth(2:3) as p 
+return p
+
+ab().src({_id in ["229"]}).dest({_id in ["59","185"]}).depth(:2) as p 
+return p
+
+
+https://www.ultipa.com/document/ultipa-graph-query-language/a-to-b/v5.0
