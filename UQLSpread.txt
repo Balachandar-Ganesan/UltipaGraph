@@ -1,0 +1,21 @@
+spread().src({_id == "229"}).depth(1) as p
+return p
+
+spread().src({_id == "229"}).depth(2) as p
+return p
+
+spread().src({_id == "229"}).depth(1).node_filter({_id != "124"}) as p
+return p
+
+
+spread().src({_id == "229"}).depth(1).node_filter({_id != "124"}) as p
+return p
+
+spread().src({_id == "229"}).depth(1).node_filter({_id != "124"}).limit(2) as p
+return p
+
+khop().src({_id == "229"}).depth(2) as n
+return n{*}
+
+khop().src({_id == "229"}).depth(:2) as n
+return n{*}
